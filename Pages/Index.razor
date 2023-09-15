@@ -1,0 +1,34 @@
+@page "/"
+
+<EditForm Model="book" OnValidSubmit="submitForm">
+    <DataAnnotationsValidator/>
+
+    <label>Title</label>
+    <InputText @bind-Value="@book.Title" class="form-control"/>
+    <ValidationMessage For="@(() => book.Title)" />
+
+    <label> Description</label>
+    <InputText @bind-Value="@book.Description" class="form-control" />
+    <ValidationMessage For="@(() => book.Description)" />
+
+    <label> Author</label>
+    <InputNumber @bind-Value="@book.Author" class="form-control" />
+    <ValidationMessage For="@(() => book.Author)" />
+</EditForm>
+
+@code{
+    public BookDto book = new BookDto();
+
+
+
+    private List<string> author = new List<string>()
+    {
+    };
+
+    private void submitForm()
+    {
+        Console.WriteLine(author.Title);
+        Console.WriteLine(author.Description);
+    }
+
+}
