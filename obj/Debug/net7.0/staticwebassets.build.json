@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "36Q82by5Gma0tUmy337zxksUcvd4x+Pe+vPFhRGGYJg=",
+  "Hash": "FWdM17vDbP1t9RYh70IbQUGUduMQHk2+nvR+AUxpJq8=",
   "Source": "Book_Management_System",
   "BasePath": "/",
   "Mode": "Root",
@@ -7157,12 +7157,12 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\Wesley\\Book_Management_System\\wwwroot\\sample-data\\weather.json",
+      "Identity": "C:\\Users\\Wesley\\Book_Management_System\\wwwroot\\sample-data\\books.json",
       "SourceId": "Book_Management_System",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Wesley\\Book_Management_System\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "sample-data/weather.json",
+      "RelativePath": "sample-data/books.json",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7171,7 +7171,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\sample-data\\weather.json"
+      "OriginalItemSpec": "wwwroot\\sample-data\\books.json"
     }
   ]
 }

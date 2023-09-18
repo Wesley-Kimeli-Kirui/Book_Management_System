@@ -1,34 +1,51 @@
-@page "/"
+@inherits LayoutComponentBase
+@inject HttpClient Http
+@page "/" 
 
-<EditForm Model="book" OnValidSubmit="submitForm">
+<EditForm Model="book" OnValidSubmit="submitForm"> 
     <DataAnnotationsValidator/>
 
     <label>Title</label>
     <InputText @bind-Value="@book.Title" class="form-control"/>
     <ValidationMessage For="@(() => book.Title)" />
 
-    <label> Description</label>
+    <label> Description</label>        
     <InputText @bind-Value="@book.Description" class="form-control" />
     <ValidationMessage For="@(() => book.Description)" />
 
     <label> Author</label>
-    <InputNumber @bind-Value="@book.Author" class="form-control" />
+    <InputText @bind="@book.Author" class="form-control" />
+    <button type="button" class="btn btn-primary" @onclick="AddAuthor">Add Author</button>
     <ValidationMessage For="@(() => book.Author)" />
+     
+   
+    <button type="button" class="btn btn-primary" @onclick="AddAuthor">AddAuthor</button>
+    <button type="submit" class="btn btn-primary" @onclick = "AddNewBook">Submit</button>
+    
 </EditForm>
 
 @code{
     public BookDto book = new BookDto();
 
-
-
-    private List<string> author = new List<string>()
+    public string InputData {get; set;} = string.Empty;
+    private void AddAuthor()
     {
-    };
-
-    private void submitForm()
+    if (!string.IsNullOrWhiteSpace(InputData))
     {
-        Console.WriteLine(author.Title);
-        Console.WriteLine(author.Description);
+        book?.Author.Add(InputData);
+        InputData = string.Empty;
+    }
+    }
+
+    [Parameter]
+    public EventCallback<BookDto> OnValidSubmit { get; set; }
+    
+    private async Task submitForm()
+    {
+        await OnValidSubmit.InvokeAsync(book);
+
+        book = new BookDto();
+        book.Authors = new List<string>();
     }
 
 }

@@ -73,8 +73,8 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\Wesley\\Book_Management_System\\wwwroot\\sample-data\\weather.json",
-      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+      "Id": "C:\\Users\\Wesley\\Book_Management_System\\wwwroot\\sample-data\\books.json",
+      "PackagePath": "staticwebassets\\sample-data\\books.json"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Book_Management_System.Microsoft.AspNetCore.StaticWebAssets.props",
